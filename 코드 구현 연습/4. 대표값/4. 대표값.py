@@ -1,7 +1,7 @@
 n = map(int,input()) # 몇명인지 입력받기
 a = list(map(int,input().split())) # 학생들의 점수를 리스트로 입력받기
 
-avr = sum(a)/int(n)  # sum(a) : list a의 값들을 모두 더해준다.
+avr = sum(a)/n  # sum(a) : list a의 값들을 모두 더해준다.
 
 # 반올림 하기
 avr += 0.5
@@ -21,4 +21,4 @@ for index, x in enumerate(a):  # enumerate(a) : index와 값을 같이 출력해
             score = x
             res = index + 1  
         
-print(score,res)
+print(avr,res)
