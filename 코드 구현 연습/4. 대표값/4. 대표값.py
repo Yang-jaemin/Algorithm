@@ -1,6 +1,6 @@
 ##  복습 요망
 
-n = map(int,input()) # 몇명인지 입력받기
+n = int(input()) # 몇명인지 입력받기
 a = list(map(int,input().split())) # 학생들의 점수를 리스트로 입력받기
 
 avr = sum(a)/n  # sum(a) : list a의 값들을 모두 더해준다.
