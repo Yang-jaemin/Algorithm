@@ -1,3 +1,5 @@
+# 복습 요망
+
 n ,m =  map(int,input().split()) # 정 n 면체 정 m 면체 받아주기
 
 cnt = [0]*(n+m+1)          

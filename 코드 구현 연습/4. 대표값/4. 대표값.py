@@ -1,3 +1,5 @@
+##  복습 요망
+
 n = map(int,input()) # 몇명인지 입력받기
 a = list(map(int,input().split())) # 학생들의 점수를 리스트로 입력받기
 
