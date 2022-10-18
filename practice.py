@@ -1,15 +1,14 @@
-def solution(s):
-    a = []
-    for i in s:
-        a.append(i)
-        
-    if a[0]=='+':
-        answer = int("".join(a[1:]))
-    elif a[0]=='-':
-        answer = -(int("".join(a[1:])))
-    else: 
-        answer = int("".join(a))
-        
-    return answer
-
-print(solution('12345133123'))
+s = 'sdfjkw'
+n = 4
+answer = ''
+for i in s:
+    if i == 'z':
+        i = 'a'
+        n = n-1
+    elif i == ' ':
+        answer += ' '
+        continue
+    elif 90 < ord(i)+n < 97:
+        n = n+6
+    answer += chr(ord(i)+n)
+print(answer)
