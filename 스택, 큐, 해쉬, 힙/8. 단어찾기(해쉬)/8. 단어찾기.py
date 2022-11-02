@@ -9,7 +9,7 @@ for i in range(n-1):
     word = input()
     p[word] = 0
 
-for key, val in p.items(): # items?
+for key, val in p.items(): # 딕.items() 하면 key 랑 value가 같이 나옴 ㅇㅇ
     if val == 1:
         print(key)
         break
