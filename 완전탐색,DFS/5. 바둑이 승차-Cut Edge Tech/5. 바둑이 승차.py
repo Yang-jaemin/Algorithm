@@ -1,6 +1,6 @@
 def DFS(l,sum):
     global largest
-    if l == n:
+    if l == n:   # index 번호
         if sum <= c and largest < sum:
             largest = sum
             
@@ -11,7 +11,7 @@ def DFS(l,sum):
 if __name__ == '__main__':
     c , n = map(int,input().split())
     a = []
-    largest = 0
+    largest = -2147000000
     for _ in range(n):
         k = int(input())
         a.append(k)
