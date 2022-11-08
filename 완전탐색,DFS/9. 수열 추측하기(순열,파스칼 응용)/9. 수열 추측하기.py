@@ -1,3 +1,4 @@
+# 어렵다 복습 요망
 import sys
 def DFS(L, sum):
     if L==n and sum==f:
