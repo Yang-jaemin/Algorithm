@@ -17,7 +17,7 @@ def check(tmp):
             ch3 = [0]*10 # 그룹체크 , 합이 9인지 확인후 초기화 (같은 라인)
             for k in range(3):
                 for s in range(3):
-                    ch3[tmp[i*3+k][a[j*3+s]]] = 1
+                    ch3[[tmp[i*3+k]]][a[j*3+s]]] = 1
             if ch3 != 9:
                 return False
     
