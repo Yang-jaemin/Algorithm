@@ -1,4 +1,6 @@
 ## 잘기억하기 - 응용많이함
+## 조합- DFS(L,S=1)
+# 체크변수가 필요없네잉
 import sys
 sys.stdin=open("input.txt", "r")
 def DFS(L, s):

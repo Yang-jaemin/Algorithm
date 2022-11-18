@@ -1,20 +1,19 @@
-# 중복 없는 순열 조합
+# 15649번
 def DFS(L):
-    if n == 2:
-        for i in range(1,n+1):
-            if ch[i] == 1:
-                print(i, end = ' ')
-                return
+    if L == M:    # 레벨이 M이 되면 M개 뽑힌거니까 출력
+        for q in range(L): # L이 1개면 1개만 출력 2개면 2개
+            print(res[q],end = ' ')
+        print()
     else:
-        for i in range(1,n+1):
-            if ch[i]== 0:
-                ch[i] = 1
-                DFS(L+1)
-                ch[i] = 0
-                DFS(L+1)
-            else:
-                continue
-            
-n, m = map(int, input().split())
-ch = list(range(n+1))
-DFS(0)
+        for i in range(1,N+1): # 실제 숫자
+            if ch[i] == 0:     # 그 숫자가 사용되지 않았으면
+                ch[i] = 1      # 사용했다고 표시하고
+                res[L] = i     # 그 숫자를 res에 넣어
+                DFS(L+1)       # 그담에 재귀 -> 그러면 다시 i가 1부터 시작인데 사용한 숫자들은 이미 ch[i]가 1이겠지? 그래서 안사용한거만 넣어짐
+                ch[i] = 0      # 그리고 한 재귀 끝났으면 이거 실행되는데 다시 0으로 바꾸면 그 다음 i가 실행되니까 ch[1]은 0이되고 그 다음 i부터 다시 탐색시작
+                
+
+N,M = map(int,input().split()) # 1부터 N까지 수중에서 중복없이 M개 고른 수열
+res = [0]* M                   # 출력할 수를 입력할 거임 M개만 출력하면 되니까 [0]* M
+ch = [0] * (N+1)               # 이 수가 사용됐는지 알기위해서 check list 1부터 N까지의 수를 포함 해야하니까 N+1
+DFS(0)                         # 레벨만 넘겨주기

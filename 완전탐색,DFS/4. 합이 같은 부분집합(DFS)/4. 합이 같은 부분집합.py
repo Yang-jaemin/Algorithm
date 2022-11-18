@@ -14,6 +14,6 @@ def DFS(L,sum): # L은 인덱스 번호
 if __name__ == "__main__":
     n = int(input())
     a = list(map(int,input().split()))
-    total = sum(a)
-    DFS(0,0)
+    total = sum(a) # 원소 총합
+    DFS(0,0)       # 레벨, sum 넘겨줘야해
     print("NO")

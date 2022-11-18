@@ -1,6 +1,6 @@
 import sys
 sys.stdin=open("input.txt", "r")
-def DFS(L, s, sum):  # 순열조합에는 s 가 필요 (스타트 지점)
+def DFS(L, s, sum):  # 조합에는 s 가 필요 (스타트 지점)
     global cnt
     if L==k:
         if sum%m==0:

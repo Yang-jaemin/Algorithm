@@ -16,7 +16,7 @@ if __name__ == "__main__":
     n = int(input())
     a = list(map(int, input().split()))
     m = int(input())
-    res = -2147000000  # 최소니까 min
+    res = 2147000000  # 최소니까 min
     a.sort(reverse = True)  # sort 해서 최소갯수를 먼저 구하고 나머지는 컽
     DFS(0,0)
     print(res)

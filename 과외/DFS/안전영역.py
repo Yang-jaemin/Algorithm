@@ -1,4 +1,8 @@
 # 실패(예제 입력은 통과 -> 채점해보면 recursion Error가 나옴)
+# 이게 있으니까 맞음 ㅋㅋㅋ
+import sys
+sys.setrecursionlimit(10**6)
+
 def DFS(Y,X):
     dx = [1,-1,0,0]
     dy = [0,0,1,-1]

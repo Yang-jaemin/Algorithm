@@ -1,4 +1,6 @@
 # 트리가 n가닥으로
+import sys
+sys.stdin.readline
 def DFS(l):
     if l == m :
         for j in res:

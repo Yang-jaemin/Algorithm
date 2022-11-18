@@ -1,7 +1,8 @@
 # 실패 1012
-# 틀림
+# 틀림 -> 맞춤
 import sys
-sys.setrecursionlimit(10**6)
+sys.setrecursionlimit(10**6) # 이게 있어야함
+
 def DFS(i,j):
     global M
     global N
