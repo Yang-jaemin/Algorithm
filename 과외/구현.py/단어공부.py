@@ -18,6 +18,16 @@ for c in s:
     if c not in d:
         d[c] = 0
     d[c] += 1
+
+mx = 0
+mxc = ''
+for ch, cnt in d:
+    if cnt > mx:
+        mx = cnt
+        mxc = ch
+    elif cnt == mx:
+        mxc = '?'
+print(mxc)
     
 for a in d.values():
     va.append(a)

@@ -1,13 +1,15 @@
 # 딕셔너리 사용
+# 왜 딕셔너리가 훨빠르지??
+# 딕셔너리로 풀라고 하신 이유??
 cnt = 0
 n,m = map(int,input().split())
-A = dict()
+A = set()
 s = list(input() for _ in range(n))
 for c in s:
-        A[c] = 0
-e = list(input())
-for a in s:
-    if a in c:
+        A.insert(c)
+e = list(input() for _ in range(m))
+for a in e:
+    if a in A:
         cnt +=1
 print(cnt)
 
