@@ -28,4 +28,11 @@ print(dis)
     
             
             
-        
+# no bfs
+#
+# (R0 C0) (R1 C1) (R2 C2)
+# dist = max(abs(RA-RB), abs(CA-CB))
+#                 2  0        0  3
+# 0 0 0 1
+# 0 1 0 0
+# 1 0 0 1
