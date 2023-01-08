@@ -1,0 +1,7 @@
+n,m = map(int,input().split())
+A = set(map(int,input().split()))
+B = set(map(int,input().split()))
+AA = set(A-B)
+BB = set(B-A)
+answer = set(AA|BB)
+print(len(answer))

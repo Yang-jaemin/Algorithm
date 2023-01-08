@@ -1,1 +1,3 @@
-print(max(2,2,2))
+d = {'d': 1}
+for k,v in d:
+    print(k,v)

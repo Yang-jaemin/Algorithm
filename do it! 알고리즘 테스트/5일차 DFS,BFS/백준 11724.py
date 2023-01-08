@@ -10,13 +10,13 @@ def DFS(v):  # 그냥 끝까지 도는거니까 종단 조건이 필요 x
                 DFS(z)
 
 n,m = map(int,input().split())
-A = [[] for _ in range(n+1)]
-visited = [0]*(n+1)
+A = [[] for _ in range(n+1)] # 인접 리스트
+visited = [0]*(n+1)      # 방문했나 안했나 체크
 cnt = 0
 
 for _ in range(m):  # 인접리스트 만드는 작업
     s,e = map(int,input().split())
-    A[s].append(e)
+    A[s].append(e)    # easy
     A[e].append(s)
     
 for x in range(1,n+1):
