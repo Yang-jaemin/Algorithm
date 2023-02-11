@@ -1,0 +1,20 @@
+from collections import deque
+def solution(bridge_length, weight, truck_weights):
+    answer = 0
+    on_bridge = [0 for _ in range(bridge_length)]
+    on_bridge = deque(on_bridge)
+    truck_weights = deque(truck_weights)
+    time = 0
+    bridge_load = 0
+    while on_bridge:
+        time += 1
+        a = on_bridge.popleft()
+        bridge_load -= a
+        if truck_weights: # 대기트럭이 남았을때
+            if bridge_load + truck_weights[0] <= weight:            
+                t = truck_weights.popleft()
+                on_bridge.append(t)
+                bridge_load += t
+            else:
+                on_bridge.append(0)
+    return time

@@ -1,0 +1,43 @@
+from math import ceil
+
+def tt(t):  # 시간 변환
+    h,m = map(int,t.split(':'))
+    return h*60 + m
+
+def solution(fees, records):
+    recs = {}   # 입출차 기록 관리 
+    fee = {}    # 요금 관리
+    for record in records:
+        time,car,IO = record.split()    # 05:34 / 5961 / IN 
+        
+        # recs에 입출차 기록을 append  ex) [[05:34,IN],[07:59 5961 OUT]]
+        if car in recs: 
+            recs[car].append([time,IO])
+        else:                              
+            recs[car] = [[time,IO]]
+        
+        # 요금 계산하기
+    for rec in recs:
+        total = 0     
+        pay = fees[1] # 기본요금
+        
+        if len(recs[rec]) % 2 != 0:  # 마지막에 나간게 없을때
+            recs[rec].append(["23:59", "OUT"]) # 나갔다고 처리
+        
+        for r in recs[rec]: # 누적시간 계산해서 total에 넣어줌
+            if r[1] == "IN":
+                total -= tt(r[0])
+            else:
+                total += tt(r[0])
+                
+        if total > fees[0]:    # 만약 기본시간보다 시간이 더 걸렸으면
+            pay += ceil((total - fees[0]) / fees[2]) * fees[3]# 기본요금 +올림(기본요금초과시간/단위시간)*단위요금
+                    
+        fee[rec] = pay  # 만약 기본시간보다 덜걸렸으면 그냥 기본요금
+        
+    a = sorted(fee.items()) # 번호로 정렬해주고
+    answer = []
+    for num,money in a:
+        answer.append(money) # 그 순서에 맞게 요금 append
+    return answer
+        

@@ -60,7 +60,7 @@
 #     print(e)
 
 # DFS 사용
-def DFS(r,c):
+def DFS(r,c): # 0,0
     global mn
     dc = [1,-1,0,0]  # 사방을 봐야하니까 dc와 dr의 조합으로 동서남북 탐색 할 수 있도록
     dr = [0,0,1,-1]
@@ -71,7 +71,7 @@ def DFS(r,c):
             if board[nr][nc] == 0:            # 0이라면
                 board[nr][nc] = 1             # 1로 바꾼다
                 mn += 1                       # 넓이 + 1
-                DFS(nr,nc)                    # 그 부분에서 다시 DFS
+                DFS(nr,nc)                     # 그 부분에서 다시 DFS
 
 import sys
 sys.setrecursionlimit(10**6)
@@ -105,7 +105,7 @@ for q in range(M):
             mns.append(mn)         # DFS에서 나온 넓이 append
             cnt += 1               # DFS에서 나왔다는 건 한덩이가 완성되었다는 뜻 cnt += 1
             
-mns.sort() # 내림차순
+mns.sort() # 오림차순
 # 출력
 print(cnt)  
 for mn in mns:

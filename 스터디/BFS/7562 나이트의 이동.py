@@ -23,21 +23,22 @@
 #                 Q.append((y,x))
                 
 #     print(dis[y2][x2])
+
 from collections import deque
-K = int(input())
+K = int(input()) # 3
 dr = [1,2,2,1,-1,-2,-2,-1]
 dc = [2,1,-1,-2,-2,-1,1,2]
-for i in range(K):
+for i in range(K): # 3
     N = int(input())
     board = [[1]*N for _ in range(N)]   # 방문만 저장
     dis = [[0]*N for _ in range(N)]     # 거리만 저장
-    r1,c1 = map(int,input().split())
-    r2,c2 = map(int,input().split())
+    r1,c1 = map(int,input().split()) # 0,0
+    r2,c2 = map(int,input().split()) # 7,0
     
     Q = deque()
     board[r1][c1] = 0 # 시작
     Q.append((r1,c1))
-    
+    # Q = [(0,0)]
     while Q:
         tmp = Q.popleft()
         if tmp == (r2,c2):
